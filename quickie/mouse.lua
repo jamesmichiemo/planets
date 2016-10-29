@@ -64,7 +64,7 @@ local function beginFrame()
 	downLast = down
 	down = false
 	for _,btn in ipairs{'l', 'm', 'r'} do
-		down = down or (love.mouse.isDown(btn) and btn)
+		down = down or (love.mouse.isDown(1) and btn)
 	end
 end
 

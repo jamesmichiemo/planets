@@ -38,13 +38,13 @@ function love.draw()
   local i = 0
   for _,planet in pairs(Planets) do
     i = i + 1
-    love.graphics.draw(planet.img, planet.xpos + (love.window.getWidth() / 2), planet.ypos + (love.window.getHeight() / 2), 0, planet.scale, planet.scale)
+    love.graphics.draw(planet.img, planet.xpos + (love.graphics.getWidth() / 2), planet.ypos + (love.graphics.getHeight() / 2), 0, planet.scale, planet.scale)
     love.graphics.print(tostring(planet), 10, i * 20)
   end
 end
 
 function love.update(dt)
-  gui.group{grow = "right", pos = {10, love.window.getHeight() - 30}, function()
+  gui.group{grow = "right", pos = {10, love.graphics.getHeight() - 30}, function()
     gui.Slider{info = speedSlider}
     gui.Label{text = string.format("%.1f", speedSlider.value^2 * 20)}
     if gui.Button{text = "Reset"} then
